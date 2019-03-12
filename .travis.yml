@@ -15,3 +15,4 @@ script:
   - cmake .. -DCMAKE_INSTALL_PREFIX=../inst
   - make
   - ctest --verbose
+  - gcovr
