@@ -1,6 +1,7 @@
-language: C
+language: c
 
-os: Linux
+os: linux
+
 
 addons:
   apt:
