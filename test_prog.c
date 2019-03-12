@@ -87,9 +87,10 @@ int main()
 	CU_pSuite s2 = add_suite("strings");
 	add_test(s2,"equals", test_string);
 
-	return CU_basic_run_tests();
-//	CU_basic_show_failures(CU_get_failure_list());
-//	puts("");
+	CU_basic_run_tests();
+	CU_basic_show_failures(CU_get_failure_list());
+	puts("");
+	return CU_get_error();
 //	CU_console_run_tests();
 //	CU_curses_run_tests();
 	
