@@ -17,6 +17,11 @@ target_include_directories(${PROJECT_NAME} PUBLIC ${RECT_DIR})
 
 install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
 
+
+add_executable(testing "")
+target_sources(testing PUBLIC func.c func.h test_prog.c )
+target_link_libraries(testing PUBLIC cuint m)
+
 include (InstallRequiredSystemLibraries)
 
 set (CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/License.txt")
