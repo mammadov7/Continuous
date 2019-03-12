@@ -1,0 +1,11 @@
+language: C
+
+os: Linux
+dist:xenial
+
+script:
+  - mkdir Build
+  - cd Build
+  - cmake ..
+  - make
+  - ./tp_area
