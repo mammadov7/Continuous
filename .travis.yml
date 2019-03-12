@@ -2,6 +2,8 @@ language: C
 
 os: Linux
 
+dist: xenial
+
 addons:
   apt:
     packages:
