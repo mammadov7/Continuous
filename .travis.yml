@@ -7,6 +7,6 @@ dist: xenial
 script:
   - mkdir Build
   - cd Build
-  - cmake ..
-  - make
-  - ./tp_area
+  - cmake .. -DCMAKE_INSTALL_PREFIX=../inst
+  - make install
+  - ../inst/bin/tp_area
