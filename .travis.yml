@@ -7,8 +7,9 @@ dist: xenial
 addons:
   apt:
     packages:
+      - gcovr
       - libcunit1-dev
-
+      
 script:
   - mkdir Build
   - cd Build
