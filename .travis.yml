@@ -2,17 +2,15 @@ language: C
 
 os: Linux
 
-dist: xenial
-
 addons:
   apt:
     packages:
       - gcovr
-      - libcunit1-ncurses-dev
+      - libcunit1-dev
 
 script:
   - mkdir Build
   - cd Build
   - cmake .. -DCMAKE_INSTALL_PREFIX=../inst
-  - make install
-  - ../inst/bin/tp_area
+  - make
+  - ctest
