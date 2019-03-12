@@ -1,7 +1,5 @@
 language: C
-
 os: Linux
-
 dist:xenial
 
 script:
