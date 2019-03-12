@@ -7,7 +7,7 @@ dist: xenial
 addons:
   apt:
     packages:
-      libcunit1-dev
+      - libcunit1-dev
 
 script:
   - mkdir Build
