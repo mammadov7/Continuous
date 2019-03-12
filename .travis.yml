@@ -6,7 +6,7 @@ addons:
   apt:
     packages:
       - gcovr
-      - libcunit1-dev
+      - libcunit1-ncurses-dev
 
 script:
   - mkdir Build
