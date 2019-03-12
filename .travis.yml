@@ -1,0 +1,10 @@
+language: C
+
+os: Linux
+
+script:
+  - mkdir Build
+  - cd Build
+  - cmake ..
+  - make
+  - ./tp_area
