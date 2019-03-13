@@ -33,5 +33,6 @@ script:
   - make
   - ctest --verbose
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
-      gcovr -r .
+      gcovr -r . ;
     fi
+
