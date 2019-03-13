@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0)
 
 project(tp_area LANGUAGES C)
-
+message(WARNING ${CMAKE_SYSTEM_NAME})
 set(CMAKE_INSTALL_RPATH ${CMAKE_INSTALL_PREFIX}/lib)
 
 # put the name of lib directory in a var
@@ -21,9 +21,15 @@ install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
 
 add_executable(testing "")
 target_sources(testing PUBLIC func.c func.h test_prog.c )
-target_link_libraries(testing PUBLIC cunit gcov m)
 target_include_directories(testing PUBLIC "/usr/include/")
-target_compile_options(testing PUBLIC -g -fprofile-arcs -ftest-coverage)
+
+if (${CMAKE_SYSTEM_NAME} STREQUAL "Darwin")
+	target_compile_options(testing PUBLIC)
+	target_link_libraries(testing PUBLIC cunit m)
+else()
+	target_link_libraries(testing PUBLIC cunit gcov m)
+	target_compile_options(testing PUBLIC -g -fprofile-arcs -ftest-coverage)
+endif()
 
 enable_testing()
 add_test(Test1 testing)
