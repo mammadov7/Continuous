@@ -91,11 +91,4 @@ int main()
 	CU_basic_show_failures(CU_get_failure_list());
 	
 	return CU_get_number_of_failures();
-//	CU_console_run_tests();
-//	CU_curses_run_tests();
-	
-
-//	CU_set_output_filename("pipoTest");
-//	CU_list_tests_to_file();
-//	CU_automated_run_tests();
 }
