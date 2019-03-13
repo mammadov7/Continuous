@@ -13,6 +13,7 @@ add_executable(${PROJECT_NAME} "")
 target_sources(${PROJECT_NAME} PUBLIC main.c )
 target_link_libraries(${PROJECT_NAME} PUBLIC Rect)
 target_include_directories(${PROJECT_NAME} PUBLIC ${RECT_DIR})
+set_property(TARGET ${PROJECT_NAME} PROPERTY C_STANDARD 99)
 
 install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
 
@@ -23,7 +24,6 @@ target_sources(testing PUBLIC func.c func.h test_prog.c )
 target_link_libraries(testing PUBLIC cunit gcov m)
 target_include_directories(testing PUBLIC "/usr/include/")
 target_compile_options(testing PUBLIC -g -fprofile-arcs -ftest-coverage)
-set_property(TARGET testing PROPERTY C_STANDARD 99)
 
 enable_testing()
 add_test(Test1 testing)
