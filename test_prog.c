@@ -12,7 +12,7 @@ void test_assert()
 	CU_ASSERT(true);
 
 	int j = 4;
-	CU_ASSERT(f_x2(j) == 8);
+	CU_ASSERT(f_x2(j) == 9);
 }
 
 void test_assert2()
@@ -89,8 +89,8 @@ int main()
 
 	CU_basic_run_tests();
 	CU_basic_show_failures(CU_get_failure_list());
-	puts("");
-	return CU_get_error();
+	
+	return CU_get_number_of_failures();
 //	CU_console_run_tests();
 //	CU_curses_run_tests();
 	

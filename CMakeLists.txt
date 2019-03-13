@@ -5,7 +5,7 @@ project(tp_area LANGUAGES C)
 
 add_executable(testing "")
 target_sources(testing PUBLIC func.c func.h test_prog.c )
-target_link_libraries(testing PUBLIC cunit gcov m)
+target_link_libraries(testing PUBLIC cunit  m)
 target_include_directories(testing PUBLIC "/usr/include/")
 target_compile_options(testing PUBLIC -g -fprofile-arcs -ftest-coverage)
 
