@@ -23,6 +23,7 @@ target_sources(testing PUBLIC func.c func.h test_prog.c )
 target_link_libraries(testing PUBLIC cunit gcov m)
 target_include_directories(testing PUBLIC "/usr/include/")
 target_compile_options(testing PUBLIC -g -fprofile-arcs -ftest-coverage)
+set_property(TARGET testing PROPERTY C_STANDARD 99)
 
 enable_testing()
 add_test(Test1 testing)
