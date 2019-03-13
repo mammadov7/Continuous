@@ -14,7 +14,19 @@ addons:
       - gcovr
       - libcunit1-dev
 
+  homebrew:
+    packages:
+      - cunit
+      - gcovr
+
 script:
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+      echo "Using LINUX" ;
+    fi
+
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+      echo "Using MAC OS/X" ;
+    fi
   - mkdir Build
   - cd Build
   - cmake .. -DCMAKE_INSTALL_PREFIX=../inst
