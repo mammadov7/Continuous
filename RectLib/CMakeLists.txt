@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.0)
 
 project(Rect LANGUAGES C)
 
-add_library(${PROJECT_NAME} SHARED "")
+add_library(${PROJECT_NAME} SHARED "") #SHARED for shared/dynamic library
 target_sources(${PROJECT_NAME} PRIVATE  point.c circle.c rectangle.c point.h circle.h rectangle.h)
 target_link_libraries(${PROJECT_NAME} PRIVATE  m)
 
