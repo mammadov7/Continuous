@@ -1,12 +1,38 @@
-language: C
+language: c
 
-os: Linux
+matrix:
+  include:
+   - os: linux
+     dist: trusty
+   - os: linux
+     dist: xenial
+   - os: osx
 
-dist: xenial
+addons:
+  apt:
+    packages:
+      - gcovr
+      - libcunit1-dev
+
+  homebrew:
+    packages:
+      - cunit
+      - gcovr
 
 script:
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+      echo "Using LINUX" ;
+    fi
+
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+      echo "Using MAC OS/X" ;
+    fi
   - mkdir Build
   - cd Build
-  - cmake ..
+  - cmake .. -DCMAKE_INSTALL_PREFIX=../inst
   - make
-  - ./tp_area
+  - ctest --verbose
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+      gcovr -r . ;
+    fi
+

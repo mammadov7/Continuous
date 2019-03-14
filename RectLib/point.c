@@ -1,7 +1,7 @@
 #include "point.h"
 
-extern inline float min(float x, float y);
-extern inline float max(float x, float y);
+float min(float x, float y) { return (x < y ? x : y); }
+float max(float x, float y) { return (x < y ? y : x); }
 
 float distance(Point pt1, Point pt2) {
   float dx = pt1.x - pt2.x;

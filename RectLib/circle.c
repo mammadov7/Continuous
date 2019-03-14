@@ -1,5 +1,6 @@
 #include "circle.h"
 
+
 float xmin(Circle c1, Circle c2){
 	return min(c1.center.x - c1.radius, c2.center.x - c2.radius);
 }
