@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 3.0)
 
 project(tp_area LANGUAGES C)
-message(WARNING ${CMAKE_SYSTEM_NAME})
+
+# modify the RPATH (path of search for dyn lib) of exec at installation
 set(CMAKE_INSTALL_RPATH ${CMAKE_INSTALL_PREFIX}/lib)
 
 # put the name of lib directory in a var
@@ -15,6 +16,7 @@ target_link_libraries(${PROJECT_NAME} PUBLIC Rect)
 target_include_directories(${PROJECT_NAME} PUBLIC ${RECT_DIR})
 set_property(TARGET ${PROJECT_NAME} PROPERTY C_STANDARD 99)
 
+# installation instruction for bin
 install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
 
 
